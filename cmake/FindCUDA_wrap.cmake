@@ -58,7 +58,8 @@ elseif("${CUDA_VERSION}" VERSION_LESS 9.0)
      )
 else()
  set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS}
-     -gencode arch=compute_30,code=sm_30
+     -Wno-deprecated-gpu-targets
+     -Wno-deprecated-declarations
      -gencode arch=compute_35,code=sm_35
      -gencode arch=compute_35,code=compute_35
      )
